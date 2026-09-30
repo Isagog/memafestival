@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MeMa · Le demo per il manifesto</title>
+<style>
+:root{--ink:#111;--paper:#f4f2ee;--card:#fff;--red:#bd2b21;--mute:#666;--rule:#d9d5cc}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+header{background:#fff;text-align:center;padding:22px 16px 14px;border-bottom:5px solid var(--red)}
+.logo{font-weight:900;font-size:clamp(2.4rem,7vw,3.8rem);letter-spacing:-.03em;line-height:1}
+.logo small{display:block;font-size:.72rem;letter-spacing:.14em;font-weight:700;color:var(--red);text-transform:lowercase;margin-bottom:2px}
+main{max-width:1180px;margin:0 auto;padding:40px 20px 60px}
+.kicker{font-family:Helvetica,Arial,sans-serif;color:var(--red);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:.2em 0 .3em}
+.lead{font-size:1.15rem;color:#333;max-width:46em;margin:0 0 2.2em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+.flip{perspective:1400px;transition:transform .15s}
+.flip:hover{transform:translateY(-3px)}
+.flip-inner{display:grid;height:100%;transform-style:preserve-3d;transition:transform .6s}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.face{grid-area:1/1;position:relative;background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--ink);backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:box-shadow .15s,border-top-color .15s,visibility 0s .3s}
+.flip:hover .face,.flip:focus-within .face{box-shadow:0 10px 24px rgba(0,0,0,.12);border-top-color:var(--red)}
+.card-link{display:block;color:inherit;text-decoration:none;height:100%}
+.card-link:focus-visible,.flip-btn:focus-visible,.open:focus-visible{outline:2px solid var(--red);outline-offset:-2px}
+.back{transform:rotateY(180deg);padding:18px 20px 22px;display:flex;flex-direction:column;overflow:auto;visibility:hidden}
+.flip.flipped .back{visibility:visible;transition-delay:0s}
+.flip.flipped .front{visibility:hidden}
+.back h2{margin:.15em 0 .5em;font-size:1.35rem;line-height:1.2}
+.back ul{margin:0 0 1em;padding-left:1.2em;font-size:.98rem;color:#333}
+.back li{margin-bottom:.5em}
+.open{margin-top:auto;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;font-weight:700;color:var(--red);text-decoration:none}
+.flip-btn{position:absolute;top:8px;right:8px;z-index:2;width:32px;height:32px;border-radius:50%;border:1px solid var(--ink);background:#fff;color:var(--ink);font:italic 700 1rem Georgia,serif;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.flip-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:#ddd;border-bottom:1px solid var(--rule)}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.num{position:absolute;top:0;left:0;background:var(--red);color:#fff;font-family:Helvetica,Arial,sans-serif;font-weight:700;font-size:1rem;padding:6px 12px}
+.body{padding:14px 16px 18px}
+.body h2{margin:0 0 .25em;font-size:1.35rem;line-height:1.2}
+.card-link:hover h2{color:var(--red)}
+.body p{margin:0 0 .6em;font-size:.98rem;color:#333}
+.host{font-family:Helvetica,Arial,sans-serif;font-size:.78rem;color:var(--mute);letter-spacing:.03em}
+footer{border-top:1px solid var(--rule);text-align:center;padding:20px;font-family:Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--mute)}
+.support .face{border-top-color:#8a8a86;background:#ecebe8}
+.support .thumb img{filter:grayscale(.6);opacity:.85}
+.support .num{background:#8a8a86}
+.support .card-link:hover .num,.support .card-link:focus-visible .num{background:var(--red)}
+.support h2{color:#555}
+.support .body p,.support .back ul{color:#666}
+@media(prefers-reduced-motion:reduce){.flip-inner{transition:none}.flip:hover{transform:none}}
+@media(max-width:400px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="logo"><small>quotidiano comunista</small>il manifesto</div></header>
+<main>
+  <div class="kicker">Il manifesto · MeMa</div>
+  <h1>Candidati demo per Manifestival 2026</h1>
+  <p class="lead">Una raccolta dei prototipi sviluppati per il manifesto, in ordine di importanza.<br>Clicca sull'immagine o sul titolo per aprire la demo.</p>
+  <div class="grid">
+
+    <div class="flip">
+      <div class="flip-inner">
+        <div class="face front">
+          <a class="card-link" href="https://ragdemo.ilmanifesto.it/" target="_blank" rel="noopener">
+            <div class="thumb"><img src="img/archivista.jpg" alt="Schermata di Parla con MeMa" loading="lazy"><span class="num">1</span></div>
+            <div class="body"><h2>Parla con MeMa</h2><p>Fai domande sugli oltre 400.000 articoli dell'archivio del giornale che MeMa ha analizzato. Ti risponderà con testo e collegamenti ad articoli rilevanti.</p><span class="host">ragdemo.ilmanifesto.it ↗</span></div>
+          </a>
+          <button type="button" class="flip-btn" aria-label="Cosa vogliamo capire: Parla con MeMa" aria-expanded="false">i</button>
+        </div>
+        <div class="face back" aria-hidden="true">
+          <div class="kicker">Cosa vogliamo capire</div>
+          <h2>Parla con MeMa</h2>
+          <ul><li>Quale tipo di domanda vorresti fare?</li><li>Vorresti poter aggiungere un voto alle risposte ricevute?</li><li>Vorresti poter lasciare un commento per la redazione alle risposte ricevute?</li><li>La differenza tra una domanda aperta ed una ricerca tradizionale è chiara?</li></ul>
+          <a class="open" href="https://ragdemo.ilmanifesto.it/" target="_blank" rel="noopener" tabindex="-1">Apri la demo ↗</a>
+          <button type="button" class="flip-btn" aria-label="Torna alla card" tabindex="-1">↩</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip">
+      <div class="flip-inner">
+        <div class="face front">
+          <a class="card-link" href="https://edisomma.isagog.com/" target="_blank" rel="noopener">
+            <div class="thumb"><img src="img/sommario.jpg" alt="Schermata del Sommario edizioni" loading="lazy"><span class="num">2</span></div>
+            <div class="body"><h2>Sommario edizioni</h2><p>Sommario sperimentale generato dall'IA per ogni edizione del giornale, a partire dal PDF originale.</p><span class="host">edisomma.isagog.com ↗</span></div>
+          </a>
+          <button type="button" class="flip-btn" aria-label="Cosa vogliamo capire: Sommario edizioni" aria-expanded="false">i</button>
+        </div>
+        <div class="face back" aria-hidden="true">
+          <div class="kicker">Cosa vogliamo capire</div>
+          <h2>Sommario edizioni</h2>
+          <ul><li>Quale lunghezza di sommario ti piacerebbe, usato in quale modo?</li><li>Ti piacerebbe una versione audio da ascoltare? In quale contesto?</li><li>Il sommario generato è fedele all'edizione?</li><li>Quali sezioni o informazioni mancano?</li><li>Lo useresti per orientarti nel giornale del giorno?</li></ul>
+          <a class="open" href="https://edisomma.isagog.com/" target="_blank" rel="noopener" tabindex="-1">Apri la demo ↗</a>
+          <button type="button" class="flip-btn" aria-label="Torna alla card" tabindex="-1">↩</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip">
+      <div class="flip-inner">
+        <div class="face front">
+          <a class="card-link" href="https://copertine.ilmanifesto.it/" target="_blank" rel="noopener">
+            <div class="thumb"><img src="img/copertine.jpg" alt="Schermata delle Copertine" loading="lazy"><span class="num">3</span></div>
+            <div class="body"><h2>Copertine</h2><p>L'archivio delle prime pagine, con ricerca sul testo e ordinamento per data o titolo.</p><span class="host">copertine.ilmanifesto.it ↗</span></div>
+          </a>
+          <button type="button" class="flip-btn" aria-label="Cosa vogliamo capire: Copertine" aria-expanded="false">i</button>
+        </div>
+        <div class="face back" aria-hidden="true">
+          <div class="kicker">Cosa vogliamo capire</div>
+          <h2>Copertine</h2>
+          <ul><li>Ti incuriosisce cercare copertine del passato con parole simili?</li><li>Come cercheresti una prima pagina?</li><li>Ricerca sul testo e ordinamento sono sufficienti?</li><li>Quali filtri aggiungeresti?</li></ul>
+          <a class="open" href="https://copertine.ilmanifesto.it/" target="_blank" rel="noopener" tabindex="-1">Apri la demo ↗</a>
+          <button type="button" class="flip-btn" aria-label="Torna alla card" tabindex="-1">↩</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip">
+      <div class="flip-inner">
+        <div class="face front">
+          <a class="card-link" href="https://grafetto.isagog.com/" target="_blank" rel="noopener">
+            <div class="thumb"><img src="img/rete.jpg" alt="Schermata di Reti di concetti" loading="lazy"><span class="num">4</span></div>
+            <div class="body"><h2>Reti di concetti</h2><p>Persone, luoghi ed organizzazioni, citati insieme negli articoli, loro autori, cronologia, esplorabili come una rete.</p><span class="host">grafetto.isagog.com ↗</span></div>
+          </a>
+          <button type="button" class="flip-btn" aria-label="Cosa vogliamo capire: Reti di concetti" aria-expanded="false">i</button>
+        </div>
+        <div class="face back" aria-hidden="true">
+          <div class="kicker">Cosa vogliamo capire</div>
+          <h2>Reti di concetti</h2>
+          <ul><li>La rete è leggibile a colpo d'occhio?</li><li>Quali collegamenti vorresti scoprire?</li><li>Questa visualizzazione è interessante per un lettore?</li><li>Ci sono tipi di associazioni di concetti che ti interessano di più?</li></ul>
+          <a class="open" href="https://grafetto.isagog.com/" target="_blank" rel="noopener" tabindex="-1">Apri la demo ↗</a>
+          <button type="button" class="flip-btn" aria-label="Torna alla card" tabindex="-1">↩</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip support">
+      <div class="flip-inner">
+        <div class="face front">
+          <a class="card-link" href="https://mema4.ilmanifesto.it/suggestions-demo" target="_blank" rel="noopener">
+            <div class="thumb"><img src="img/simili.jpg" alt="Schermata di Articoli simili" loading="lazy"><span class="num">5</span></div>
+            <div class="body"><h2>Articoli simili</h2><p>Incolla l'URL di un articolo e ottieni i suggerimenti più affini, ordinati per rilevanza.</p><span class="host">mema4.ilmanifesto.it ↗</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip support">
+      <div class="flip-inner">
+        <div class="face front">
+          <a class="card-link" href="https://memascopio.isagog.com/it/memascope" target="_blank" rel="noopener">
+            <div class="thumb"><img src="img/memascope.jpg" alt="Schermata di MeMaScope" loading="lazy"><span class="num">6</span></div>
+            <div class="body"><h2>MeMaScope</h2><p>Per ogni articolo: riepilogo, punti salienti, mappa geografica ed entità con i relativi dettagli.</p><span class="host">memascopio.isagog.com ↗</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<footer>Prototipi MeMa · Isagog per il manifesto</footer>
+<script>
+document.querySelectorAll('.flip').forEach(function(card){
+  var front=card.querySelector('.front .flip-btn'),back=card.querySelector('.back');
+  if(!front||!back)return;
+  function toggle(){
+    var on=card.classList.toggle('flipped');
+    front.setAttribute('aria-expanded',on);
+    back.setAttribute('aria-hidden',!on);
+    back.querySelectorAll('a,button').forEach(function(el){el.tabIndex=on?0:-1});
+    (on?back.querySelector('.flip-btn'):front).focus({preventScroll:true});
+  }
+  card.querySelectorAll('.flip-btn').forEach(function(b){b.addEventListener('click',toggle)});
+});
+</script>
+</body>
+</html>
