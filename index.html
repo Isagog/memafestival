@@ -14,7 +14,10 @@ header{background:#fff;text-align:center;padding:22px 16px 14px;border-bottom:5p
 main{max-width:1180px;margin:0 auto;padding:40px 20px 60px}
 .kicker{font-family:Helvetica,Arial,sans-serif;color:var(--red);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
 h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:.2em 0 .3em}
-.lead{font-size:1.15rem;color:#333;max-width:46em;margin:0 0 2.2em}
+.intro{display:flex;align-items:center;gap:32px;margin-bottom:2.2em}
+.mema-logo{flex:none;width:clamp(96px,14vw,150px);height:auto;clip-path:circle(46%)}
+.lead{font-size:1.15rem;color:#333;max-width:46em;margin:0}
+@media(max-width:560px){.intro{flex-direction:column;align-items:flex-start;gap:16px}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
 .flip{perspective:1400px;transition:transform .15s}
 .flip:hover{transform:translateY(-3px)}
@@ -55,9 +58,14 @@ footer{border-top:1px solid var(--rule);text-align:center;padding:20px;font-fami
 <body>
 <header><div class="logo"><small>quotidiano comunista</small>il manifesto</div></header>
 <main>
-  <div class="kicker">Il manifesto · MeMa</div>
-  <h1>Candidati demo per Manifestival 2026</h1>
-  <p class="lead">Una raccolta dei prototipi sviluppati per il manifesto, in ordine di importanza.<br>Clicca sull'immagine o sul titolo per aprire la demo.</p>
+  <div class="intro">
+    <img class="mema-logo" src="img/memalogo.jpg" alt="MeMa, il progetto di intelligenza artificiale del manifesto" width="360" height="360">
+    <div class="intro-text">
+    <div class="kicker">Il manifesto · MeMa</div>
+    <h1>Candidati demo per Manifestival 2026</h1>
+    <p class="lead">Una raccolta dei prototipi sviluppati per il manifesto, in ordine di importanza.<br>Clicca sull'immagine o sul titolo per aprire la demo.</p>
+    </div>
+  </div>
   <div class="grid">
 
     <div class="flip">
